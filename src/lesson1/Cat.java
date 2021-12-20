@@ -1,6 +1,6 @@
 package lesson1;
 
-public class Cat implements Runnable, Jumpable {
+public class Cat implements Athlete {
   private final String name;
   private final int runDistance;
   private final int jumpHeight;

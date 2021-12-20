@@ -1,6 +1,6 @@
 package lesson1;
 
-public class Robot implements Runnable, Jumpable {
+public class Robot implements Athlete {
   private final String name;
   private final int runDistance;
   private final int jumpHeight;
