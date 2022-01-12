@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Main {
 
     static final int size = 10000000;
-    static final int h = size / 2;
+    static final int halfSize = size / 2;
 
     public static void main(String[] args) {
         oneArr();
@@ -34,9 +34,9 @@ public class Main {
 
         long startTime = System.currentTimeMillis();
 
-        float[] firstPart = new float[h];
-        float[] secondPart = new float[h];
-        for (int i = 0, j = h; i < h; i++, j++) {
+        float[] firstPart = new float[halfSize];
+        float[] secondPart = new float[halfSize];
+        for (int i = 0, j = halfSize; i < halfSize; i++, j++) {
             firstPart[i] = arr[i];
             secondPart[i] = arr[j];
         }
@@ -50,10 +50,10 @@ public class Main {
         secondThread.join();
 
         for (int i = 0; i < arr.length; i++) {
-            if (i < h) {
+            if (i < halfSize) {
                 arr[i] = firstPart[i];
             } else {
-                arr[i] = secondPart[i - h];
+                arr[i] = secondPart[i - halfSize];
             }
         }
 
